@@ -1,0 +1,178 @@
+{
+  "component": {
+    "entities": [
+      {
+        "name": "user",
+        "columns": [
+          {
+            "id": 1,
+            "field": "Bob"
+          },
+          {
+            "id": 2,
+            "field": "John"
+          },
+          {
+            "id": 3,
+            "field": "Tom"
+          }
+        ]
+      },
+      {
+        "name": "country",
+        "columns": [
+          {
+            "id": 1,
+            "field": "USA"
+          },
+          {
+            "id": 2,
+            "field": "Canada"
+          },
+          {
+            "id": 3,
+            "field": "England"
+          }
+        ]
+      },
+      {
+        "name": "cities",
+        "columns": [
+          {
+            "id": 1,
+            "field": "Chicago"
+          },
+          {
+            "id": 2,
+            "field": "Toronto"
+          },
+          {
+            "id": 3,
+            "field": "York"
+          }
+        ]
+      },
+      {
+        "name": "capital",
+        "columns": [
+          {
+            "id": 1,
+            "field": "Washington"
+          },
+          {
+            "id": 2,
+            "field": "Ottawa"
+          },
+          {
+            "id": 3,
+            "field": "London"
+          }
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "type": "one2many",
+        "from": "user",
+        "to": "country"
+      },
+      {
+        "type": "one2many",
+        "from": "country",
+        "to": "cities"
+      },
+      {
+        "type": "one2one",
+        "from": "country",
+        "to": "capital"
+      }
+    ],
+    "entityDiagram": {
+      "tables": [
+        {
+          "name": "user",
+          "position": {
+            "top": 20,
+            "left": 20,
+            "width": 50,
+            "height": 50
+          }
+        },
+        {
+          "name": "country",
+          "position": {
+            "top": 80,
+            "left": 80,
+            "width": 50,
+            "height": 50
+          }
+        },
+        {
+          "name": "cities",
+          "position": {
+            "top": 20,
+            "left": 20,
+            "width": 50,
+            "height": 50
+          }
+        },
+        {
+          "name": "capital",
+          "position": {
+            "top": 140,
+            "left": 140,
+            "width": 50,
+            "height": 50
+          }
+        }
+      ],
+      "relations": [
+        {
+          "name": {
+            "type": "one2many",
+            "from": "user",
+            "to": "country"
+          },
+          "startPoint": {
+            "side":"right",
+            "shiftInPercent": 50
+          },
+          "endPoint": {
+            "side": "left",
+            "shiftInPercent": 50
+          }
+        },
+        {
+          "name": {
+            "type": "one2many",
+            "from": "country",
+            "to": "cities"
+          },
+          "startPoint": {
+            "side":"right",
+            "shiftInPercent": 50
+          },
+          "endPoint": {
+            "side": "left",
+            "shiftInPercent": 50
+          }
+        },
+        {
+          "name": {
+            "type": "one2one",
+            "from": "country",
+            "to": "capital"
+          },
+          "startPoint": {
+            "side": "bottom",
+            "shiftInPercent": 50
+          },
+          "endPoint": {
+            "side": "top",
+            "shiftInPercent": 50
+          }
+        }
+      ]
+    }
+  }
+}
